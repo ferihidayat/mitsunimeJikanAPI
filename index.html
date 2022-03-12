@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitsunime | Api Jikan</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="shortcut icon" href="img/layouts/profile.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/icons.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="jquery.novacancy.min.js"></script>
+
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg nav-border navbar-light bg-light fixed-top px-2" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mitsunime</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse px-4" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-item px-1">
+             <a class="nav-item nav-link active" href="#">Home</a> 
+          </li> -->
+          <li class="nav-item px-1">
+            <a class="nav-item nav-link" href="#">Later Season</a>
+          </li>
+          <li class="nav-item px-1 dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Top Anime
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Top Airing Anime</a></li>
+              <li><a class="dropdown-item" href="#">Top Upcoming Anime</a></li>
+              <li><a class="dropdown-item" href="#">Most Popular Anime</a></li>
+            </ul>
+          </li>
+          <li class="nav-item px-1 dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Schedule
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Monday</a></li>
+              <li><a class="dropdown-item" href="#">Tuesday</a></li>
+              <li><a class="dropdown-item" href="#">Wednesday</a></li>
+              <li><a class="dropdown-item" href="#">Thursday</a></li>
+              <li><a class="dropdown-item" href="#">Friday</a></li>
+              <li><a class="dropdown-item" href="#">Saturday</a></li>
+              <li><a class="dropdown-item" href="#">Sunday</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        <div class="d-flex">
+          <input class="form-control form-control-light me-2" name="search" id="search" type="text" placeholder="Search"
+            aria-label="Search">
+          <!-- <a href="register.html" class="btn btn-primary mx-1" type="button">Register</a>
+          <a href="login.html" class="btn btn-outline-primary mx-1" type="button">Login</a> -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-5 mb-2">
+    <!-- ---------Adsense---------- -->
+    <div class="container mb-1">
+
+      <div class="Ads mb-2">Ads go here</div>
+      <div class="home">
+
+      </div>
+      <div class="col-12">
+        <!-- <div class="form-group" id="process" style="display:none;">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0"
+              aria-valuemax="100" style="">
+            </div>
+          </div>
+        </div> -->
+
+        <div class="row row-cols-1 row-cols-md-5 g-3" id="content">
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- <footer class="bg-dark py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="img/logo.png" alt="" class="logo-dark" height="18">
+          <p class="text-muted mt-4">Hyper makes it easier to build better websites with
+            <br> great speed. Save hundreds of hours of design
+            <br> and development by using it.</p>
+
+        
+        </div>
+
+        <div class="col-lg-2 mt-3 mt-lg-0">
+          <h5 class="text-light">Company</h5>
+
+          <ul class="list-unstyled ps-0 mb-0 mt-3">
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">About Us</a></li>
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Documentation</a></li>
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Blog</a></li>
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Affiliate Program</a></li>
+          </ul>
+
+        </div>
+
+        <div class="col-lg-2 mt-3 mt-lg-0">
+          <h5 class="text-light">Apps</h5>
+
+          <ul class="list-unstyled ps-0 mb-0 mt-3">
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Ecommerce Pages</a></li>
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Email</a></li>
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Social Feed</a></li>
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Projects</a></li>
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Tasks Management</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 mt-3 mt-lg-0">
+          <h5 class="text-light">Discover</h5>
+
+          <ul class="list-unstyled ps-0 mb-0 mt-3">
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Help Center</a></li>
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Our Products</a></li>
+            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="mt-5">
+            <p class="text-muted mt-4 text-center mb-0">© 2021 Codetemp. Design and coded by
+              Feri Hidayatulloh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
