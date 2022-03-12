@@ -130,7 +130,11 @@ function TopAnime(subtype) {
 		url: 'https://api.jikan.moe/v3/top/anime/1/' + subtype,
 		type: 'get',
 		dataType: 'json',
+		beforeSend: function () {
+			$(".spinner-border").css("display", "block");
+		},
 		success: function (result) {
+			$(".spinner-border").css("display", "none");
 			let anime = result.top;
 			console.log(anime);
 
@@ -186,16 +190,11 @@ function LaterSeason() {
 		url: 'https://api.jikan.moe/v3/season/later',
 		type: 'get',
 		dataType: 'json',
-		// beforeSend: function () {
-		// 	$('#process').css('display', 'block');
-		// },
+		beforeSend: function () {
+			$(".spinner-border").css("display", "block");
+		},
 		success: function (result) {
-			// var percentage = 0;
-
-			// var timer = setInterval(function () {
-			// 	percentage = percentage + 20;
-			// 	progress_bar_process(percentage, timer);
-			// }, 1000);
+			$(".spinner-border").css("display", "none");
 			let anime = result.anime;
 			console.log(anime);
 			$.each(anime, function (i, data) {
@@ -235,7 +234,11 @@ function ScheduleAnime(subtype) {
 		url: 'https://api.jikan.moe/v3/schedule/' + subtype,
 		type: 'get',
 		dataType: 'json',
+		beforeSend: function () {
+			$(".spinner-border").css("display", "block");
+		},
 		success: function (result) {
+			$(".spinner-border").css("display", "none");
 			let anime;
 			if (subtype === "sunday") {
 				anime = result.sunday;
