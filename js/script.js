@@ -122,10 +122,10 @@ $(document).ready(function () {
 
 // TOOP ANIME
 function TopAnime(subtype) {
-	// $('#content').html(`
-	// 	<h5 class="text-dark">top `+subtype+`</h5>
-	// 	<hr>
-	// 	`);
+	$('#title-page').html(`
+		<h4 class="text-dark"> Top ` + subtype + ` </h4>
+		<hr>
+		`);
 	$.ajax({
 		url: 'https://api.jikan.moe/v3/top/anime/1/' + subtype,
 		type: 'get',
@@ -164,27 +164,57 @@ function TopAnime(subtype) {
 	});
 }
 
-// function progress_bar_process(percentage, timer) {
-// 	$('.progress-bar').css('width', percentage + '%');
-// 	if (percentage > 100) {
-// 		clearInterval(timer);
-// 		$('#sample_form')[0].reset();
-// 		$('#process').css('display', 'none');
-// 		$('.progress-bar').css('width', '0%');
-// 		$('#save').attr('disabled', false);
-// 		$('#success_message').html("<div class='alert alert-success'>Data Saved</div>");
-// 		setTimeout(function () {
-// 			$('#success_message').html('');
-// 		}, 5000);
-// 	}
+// function DetailAnime(subtype) {
+// 	$('#title-page').html(`
+// 		<h5 class="text-dark">Detail Anime</h5>
+// 		<hr>
+// 		`);
+// 	const id = data.url
+// 	$.ajax({
+// 		url: 'https://api.jikan.moe/v3/anime/' + id,
+// 		type: 'get',
+// 		dataType: 'json',
+// 		beforeSend: function () {
+// 			$(".spinner-border").css("display", "block");
+// 		},
+// 		success: function (result) {
+// 			$(".spinner-border").css("display", "none");
+// 			let anime = result.top;
+// 			console.log(anime);
+
+// 			$.each(anime, function (i, data) {
+// 				$('#content').append(`
+// 					 <div class="col anime">
+//                         <a style="--bs-aspect-ratio: 140%" class="ratio d-block rounded-3 overflow-hidden"
+//                             href="` + data.url + `" target="_blank">
+//                             <img src="` + data.image_url + `"
+//                                 class="w-100 h-100 object-fit-cover position-absolute top-0 img-anime" alt=""
+//                                 loading="lazy">
+//                             <div class="img-shadow"></div>
+//                             <div class="w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
+//                                 <div class="row">
+// 								<small class="text-white mb-1">#RANK ` + data.rank + `</small>
+//                                     <h5 class="text-white mb-2">` + data.title + `</h5>
+// 									<h6 class="card-subtitle text-white mb-1>` + data.type + ` (` + data.episodes + ` Eps)</h6>
+// 			                      <h6 class="card-subtitle text-light mb-1>` + data.start_date + ` - ` + data.end_date + `</h6>
+//                                     <small class="text-white mb-2">` + data.members + ` Member</small>
+//                                 </div>
+//                             </div>
+//                         </a>
+//                     </div>
+// 						`);
+// 			});
+// 		}
+// 	});
 // }
+
 
 // LATER SEASON
 function LaterSeason() {
-	// $('#content').html(`
-	// 	<h4 class="text-dark">Later Season</h4>
-	// 	<hr>
-	// 	`);
+	$('#title-page').html(`
+		<h4 class="text-dark">Later Season</h4>
+		<hr>
+		`);
 
 	$.ajax({
 		url: 'https://api.jikan.moe/v3/season/later',
@@ -226,10 +256,10 @@ function LaterSeason() {
 
 //SCHEDULE ANIME
 function ScheduleAnime(subtype) {
-	// $('#content').html(`
-	// 	<h2>`+subtype+`</h2>
-	// 	<hr>
-	// 	`);
+	$('#title-page').html(`
+		<h4 class="text-dark">` + subtype + `</h4>
+		<hr>
+		`);
 	$.ajax({
 		url: 'https://api.jikan.moe/v3/schedule/' + subtype,
 		type: 'get',
@@ -240,19 +270,19 @@ function ScheduleAnime(subtype) {
 		success: function (result) {
 			$(".spinner-border").css("display", "none");
 			let anime;
-			if (subtype === "sunday") {
+			if (subtype === "Sunday") {
 				anime = result.sunday;
-			} else if (subtype === "monday") {
+			} else if (subtype === "Monday") {
 				anime = result.monday;
-			} else if (subtype === "tuesday") {
+			} else if (subtype === "Tuesday") {
 				anime = result.tuesday;
-			} else if (subtype === "wednesday") {
+			} else if (subtype === "Wednesday") {
 				anime = result.wednesday;
-			} else if (subtype === "thursday") {
+			} else if (subtype === "Thursday") {
 				anime = result.thursday;
-			} else if (subtype === "friday") {
+			} else if (subtype === "Friday") {
 				anime = result.friday;
-			} else if (subtype === "saturday") {
+			} else if (subtype === "Saturday") {
 				anime = result.saturday;
 			}
 			console.log(anime);
@@ -322,7 +352,7 @@ $('.dropdown-item').on('click', function () {
 		$('.home').removeClass('home');
 		$('.neon-text').html('');
 
-		subtype = 'sunday';
+		subtype = 'Sunday';
 		ScheduleAnime(subtype);
 	}
 
@@ -331,7 +361,7 @@ $('.dropdown-item').on('click', function () {
 		$('.home').removeClass('home');
 		$('.neon-text').html('');
 
-		subtype = 'monday';
+		subtype = 'Monday';
 		ScheduleAnime(subtype);
 	}
 
@@ -340,7 +370,7 @@ $('.dropdown-item').on('click', function () {
 		$('.home').removeClass('home');
 		$('.neon-text').html('');
 
-		subtype = 'tuesday';
+		subtype = 'Tuesday';
 		ScheduleAnime(subtype);
 	}
 
@@ -349,7 +379,7 @@ $('.dropdown-item').on('click', function () {
 		$('.home').removeClass('home');
 		$('.neon-text').html('');
 
-		subtype = 'wednesday';
+		subtype = 'Wednesday';
 		ScheduleAnime(subtype);
 	}
 
@@ -358,7 +388,7 @@ $('.dropdown-item').on('click', function () {
 		$('.home').removeClass('home');
 		$('.neon-text').html('');
 
-		subtype = 'thursday';
+		subtype = 'Thursday';
 		ScheduleAnime(subtype);
 	}
 
@@ -367,7 +397,7 @@ $('.dropdown-item').on('click', function () {
 		$('.home').removeClass('home');
 		$('.neon-text').html('');
 
-		subtype = 'friday';
+		subtype = 'Friday';
 		ScheduleAnime(subtype);
 	}
 
@@ -376,7 +406,7 @@ $('.dropdown-item').on('click', function () {
 		$('.home').removeClass('home');
 		$('.neon-text').html('');
 
-		subtype = 'saturday';
+		subtype = 'Saturday';
 		ScheduleAnime(subtype);
 	}
 })
